@@ -68,5 +68,9 @@ namespace LogicaNegocio
                 Console.WriteLine(d.ToString());
             }
         }
+        public ColeccionDivisas ColeccionDivisas
+        {
+            get { return this.ColeccionDivisas; }
+        }
     }
 }

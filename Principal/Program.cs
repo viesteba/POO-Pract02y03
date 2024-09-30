@@ -34,7 +34,11 @@ namespace Principal
 
 
 
-            Form1 form1 = new Form1();
+            Form1 form1 = new Form1(conversor);
+            foreach(Divisa d in colDiv)
+            {
+                form1.anadirDivisaALista(d);
+            }
             System.Windows.Forms.Application.Run(form1);
         }
     }
