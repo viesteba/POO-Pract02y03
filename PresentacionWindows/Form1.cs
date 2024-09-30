@@ -19,11 +19,19 @@ namespace PresentacionWindows
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// conversor es un conversor no vacío
+        /// </summary>
+        /// <param name="c"></param>
         public Form1(Conversor c)
         {
             InitializeComponent();
             this.conversor = c;
         }
+        /// <summary>
+        /// divisa es no nula
+        /// </summary>
+        /// <param name="d"></param>
         public void anadirDivisaALista(Divisa d)
         {
             this.ListaDivisaOrigen.Items.Add(d.Nombre);
@@ -43,7 +51,11 @@ namespace PresentacionWindows
         {
 
         }
-
+        /// <summary>
+        /// Calcula la conversión si la cantidad es positiva y las divisas existen.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             String cantidad = textBoxCantidad.Text;
@@ -61,6 +73,29 @@ namespace PresentacionWindows
             else
             {
                 MessageBox.Show("Algún dato no es válido.");
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        /// <summary>
+        /// añade la nueva divisa, si no existe ya ni es nula
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if(this.textBoxNuevaDivisa.Text != null && !this.conversor.ExisteDivisa(this.textBoxNuevaDivisa.Text))
+            {
+                Divisa d = new Divisa(this.textBoxNuevaDivisa.Text, 11);
+                this.anadirDivisaALista(d);
+                this.conversor.AnadirDivisa(d);
+            }
+            else
+            {
+                MessageBox.Show("Cuidado, el nombre de la divisa no es el adecuado");
             }
         }
     }

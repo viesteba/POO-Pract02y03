@@ -37,6 +37,8 @@
             this.ListaDivisaOrigen = new System.Windows.Forms.ListBox();
             this.ListaDivisaDestino = new System.Windows.Forms.ListBox();
             this.textBoxResultado = new System.Windows.Forms.TextBox();
+            this.textBoxNuevaDivisa = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -120,11 +122,31 @@
             this.textBoxResultado.Size = new System.Drawing.Size(100, 26);
             this.textBoxResultado.TabIndex = 8;
             // 
+            // textBoxNuevaDivisa
+            // 
+            this.textBoxNuevaDivisa.Location = new System.Drawing.Point(93, 219);
+            this.textBoxNuevaDivisa.Name = "textBoxNuevaDivisa";
+            this.textBoxNuevaDivisa.Size = new System.Drawing.Size(100, 26);
+            this.textBoxNuevaDivisa.TabIndex = 9;
+            this.textBoxNuevaDivisa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(93, 254);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 52);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Añadir divisa";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBoxNuevaDivisa);
             this.Controls.Add(this.textBoxResultado);
             this.Controls.Add(this.ListaDivisaDestino);
             this.Controls.Add(this.ListaDivisaOrigen);
@@ -153,6 +175,8 @@
         private System.Windows.Forms.ListBox ListaDivisaOrigen;
         private System.Windows.Forms.ListBox ListaDivisaDestino;
         private System.Windows.Forms.TextBox textBoxResultado;
+        private System.Windows.Forms.TextBox textBoxNuevaDivisa;
+        private System.Windows.Forms.Button button2;
     }
 }
 

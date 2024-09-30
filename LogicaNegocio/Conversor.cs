@@ -92,5 +92,13 @@ namespace LogicaNegocio
         {
             get { return this.ColeccionDivisas; }
         }
+        /// <summary>
+        /// divisa no está en la lista de divisas
+        /// </summary>
+        /// <param name="d"></param>
+        public void AnadirDivisa(Divisa d)
+        {
+            this.divisas.Add(d);
+        }
     }
 }
