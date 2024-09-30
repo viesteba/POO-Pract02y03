@@ -10,26 +10,50 @@ namespace ModeloDominio
     {
         private string nombre;
         private double valor;
-
+        /// <summary>
+        /// value es un valor no negativo
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="value"></param>
         public Divisa(string name, double value)
         {
             this.nombre = name;
             this.valor = value;
         }
+        /// <summary>
+        /// permite obtener el nombre de la divisa
+        /// </summary>
         public string Nombre
         {
             get { return nombre; }
-            set { nombre = value; }
         }
+        /// <summary>
+        /// permite consultar el valor de la divisa con respecto a la divisa de referencia
+        /// </summary>
         public double Valor
         {
             get { return valor; }
-            set { valor = value; }
         }
+        /// <summary>
+        /// divisa está inicializada
+        /// </summary>
+        /// <param name="divisa"></param>
+        /// <returns>devuelve true si son la misma divisa, i.e. comparten el mismo nombre</returns>
         public bool Equals(Divisa divisa)
         {
-            return (this.nombre.Equals(divisa.nombre) && this.valor.Equals(divisa.valor));
+            if (divisa == null)
+            {
+                return this == null;
+            }
+            else
+            {
+                return (this.nombre.Equals(divisa.nombre));
+            }
         }
+        /// <summary>
+        /// divisa ha sido inicializada
+        /// </summary>
+        /// <returns>dvuelve la información de la divisa</returns>
         public string ToString()
         {
             return this.nombre + "- " + this.valor;

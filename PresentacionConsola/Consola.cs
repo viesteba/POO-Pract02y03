@@ -11,11 +11,17 @@ namespace PresentacionConsola
     public class Consola
     {
         private Conversor conversor;
-
+        /// <summary>
+        /// conversor ha sido inicializado
+        /// </summary>
+        /// <param name="conversor"></param>
         public Consola(Conversor conversor)
         {
             this.conversor = conversor;
         }
+        /// <summary>
+        /// ofrece un menu para convertir divisas
+        /// </summary>
         public void Menu()
         {
             String s1;

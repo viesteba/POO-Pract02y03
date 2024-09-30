@@ -11,7 +11,11 @@ namespace LogicaNegocio
     {
         private Divisa divRef;
         private ColeccionDivisas divisas;
-
+        /// <summary>
+        /// divRef está en la colección de divisas
+        /// </summary>
+        /// <param name="divRef"></param>
+        /// <param name="divisas"></param>
         public Conversor(Divisa divRef, ColeccionDivisas divisas)
         {
             this.divRef = divRef;
@@ -28,10 +32,20 @@ namespace LogicaNegocio
         {
             return cant * d2.Valor / d1.Valor;
         }
+        /// <summary>
+        /// d es una divisa
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns>devuelve true si la divisa está en la colección y falso en otro caso</returns>
         public bool ExisteDivisa(Divisa d)
         {
             return divisas.Contains(d);
         }
+        /// <summary>
+        /// nomDiv es una cadena
+        /// </summary>
+        /// <param name="nomDiv"></param>
+        /// <returns>devuelve true si hay una divisa con ese nombre en la colección</returns>
         public bool ExisteDivisa(string nomDiv)
         {
             bool existe = false;
@@ -45,10 +59,10 @@ namespace LogicaNegocio
             return existe;
         }
         /// <summary>
-        /// existe la divisa
+        /// existe una divisa en colección divisas con nombre nomDiv
         /// </summary>
         /// <param name="nomDiv"></param>
-        /// <returns></returns>
+        /// <returns>devuelve la divisa de la colección que tiene ese nombre</returns>
         public Divisa GetDivisa(string nomDiv)
         {
             Divisa divisa = null;
@@ -61,6 +75,9 @@ namespace LogicaNegocio
             }
             return divisa;
         }
+        /// <summary>
+        /// muestra los nombres de las divisas disponibles
+        /// </summary>
         public void ColeccionClaves()
         {
             foreach (Divisa d in divisas)
@@ -68,6 +85,9 @@ namespace LogicaNegocio
                 Console.WriteLine(d.ToString());
             }
         }
+        /// <summary>
+        /// proporciona una propiedad para obtener la colección de divisas
+        /// </summary>
         public ColeccionDivisas ColeccionDivisas
         {
             get { return this.ColeccionDivisas; }
